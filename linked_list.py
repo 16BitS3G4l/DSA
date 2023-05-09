@@ -65,7 +65,6 @@ class Queue:
         
         traversedCount = 0
 
-        # traverse until element before tail 
         while tailNode.nextNode != None:
             traversedCount+=1
             nodeBeforeTail = tailNode    
