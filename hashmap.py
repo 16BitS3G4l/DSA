@@ -6,6 +6,7 @@ class HashMap:
         self.size = size 
         print(self.values)
 
+    # very simple hash function. This is not collision resistant at all, for demonstration purposes.
     def hash(self, key):
         return len(key)
     
