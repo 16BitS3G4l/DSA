@@ -4,10 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
-        sequences = []
-
-        # key is the entry in the nums list, value is sequence? (maybe...)
         processed_nums = set(nums)
 
         max_sequence_length = 0 
@@ -15,9 +11,6 @@ class Solution(object):
         
         for num_index in range(0, len(nums)):
             num = nums[num_index]
-
-            # check if it is the start of a sequence 
-            sequence_members = []
 
             if num in processed_nums and num-1 not in processed_nums:
 
