@@ -1,4 +1,35 @@
 # implement max heap in Python
+def indexExists(index, list):
+    return 0 <= index <= len(list) -1
+
+
+class HeapElement:
+
+    def __init__(self, data, priority):
+        self.val = priority
+        self.data = data 
+    
+    def getData(self):
+        return self.data 
+
+    def setVal(self, val):
+        self.val = val 
+
+    def getVal(self):
+        return self.val 
+
+    def __eq__(self, other):
+        return self.getVal() == other.getVal() 
+    
+    def __ge__(self, other):
+        return self.getVal() >= other.getVal()
+
+    def __gt__(self, other):
+        return self.getVal() > other.getVal()
+        
+    def __lt__(self, other):
+        return self.getVal() < other.getVal()
+        
 
 class MaxHeap:
 
@@ -13,6 +44,9 @@ class MaxHeap:
         greater_than_parent = True
 
         while greater_than_parent:
+
+            # check if parent even exists
+
             index = len(self.elements)-1
             parent_index = int ((index-1)/2)
 
