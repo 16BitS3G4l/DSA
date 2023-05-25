@@ -30,3 +30,4 @@
 11. Valid Palindrome
 12. Valid Parenthesis
 13. Valid Sudoku
+14. 3Sum
