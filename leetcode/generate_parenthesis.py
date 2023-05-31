@@ -1,42 +1,36 @@
 class Solution(object):
 
+    def generateSolutions(self, n, solution, open=0, closed=0):
+        print(solution)
+
+        if open == n and closed == n:
+            return [solution]
+        
+        # the only way forward is to add a closing parentheses (since we used all our opens) 
+        elif open == n and closed != n:
+    
+            return self.generateSolutions(n, solution + ")", open, closed+1)
+        
+        elif closed < open:
+
+            adding_close = self.generateSolutions(n, solution+")", open, closed+1)
+            adding_open = self.generateSolutions(n, solution+"(", open+1, closed)
+
+            combined = []
+
+            combined.extend(adding_close)
+            combined.extend(adding_open)
+
+            return combined 
+    
+        elif closed == open and (closed != n and open != n):
+            return self.generateSolutions(n, solution + "(", open+1, closed)
+
+
     def generateParenthesis(self, n):
         """
         :type n: int
         :rtype: List[str]
         """
 
-        if n == 1:
-            return ["()"]
-
-        
-        n_minus_one = self.generateParenthesis(n-1)
-
-        results = []
-
-        # if n == 4:
-        #     results.append("( ( ) ) ( ( ) )")
-
-        for a in n_minus_one:
-
-            
-            results.append("()" + a)
-            
-            if a + "()" != ("()" + a):
-                results.append(a + "()")
-
-            results.append("(" + a + ")")
-
-    
-        return results
-
-
-a = Solution()
-print(a.generateParenthesis(4))
-# a = set(["(())(())","()()()()","(()()())","()(()())","(()())()","((()()))","()()(())","()(())()","(()(()))","()(())()","(())()()","((())())","()((()))","((()))()","(((())))"])
-# b = set(["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"])
-
-
-# print(b.difference(a))
-# print(len(a))
-# print(len(b))
+        return self.generateSolutions(n, "(", 1, 0)
