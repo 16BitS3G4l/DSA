@@ -11,6 +11,7 @@
 8. Stack
 9. Queue
 10. Binary Search Tree
+11. Next up: Trie or Bloom filter
 
 ## Algorithms
 1. Binary Search
