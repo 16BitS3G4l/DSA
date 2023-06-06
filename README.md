@@ -37,4 +37,4 @@
 13. Valid Sudoku
 14. 3Sum
 15. Generate Parentheses
-16. Next up: Daily Temperatures
+16. Daily Temperatures
