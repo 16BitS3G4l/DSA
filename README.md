@@ -7,7 +7,12 @@
 4. Heap
 5. Linked List
 6. Priority Queue (Based off Heap)
- 
+7. LRU Cache
+8. Stack
+9. Queue
+10. Binary Search Tree
+11. Next up: Trie or Bloom filter
+
 ## Algorithms
 1. Binary Search
 2. Bubble Sort
@@ -31,3 +36,5 @@
 12. Valid Parenthesis
 13. Valid Sudoku
 14. 3Sum
+15. Generate Parentheses
+16. Next up: Daily Temperatures
